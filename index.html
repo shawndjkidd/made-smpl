@@ -1,143 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Wine Made SMPL</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Made SMPL</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    html, body {
-      height: 100%;
-      background: #0a0a0a;
-      color: #fff;
-      font-family: 'Inter', sans-serif;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .container {
-      text-align: center;
-      padding: 2rem 1.5rem;
-      max-width: 480px;
-      width: 100%;
-    }
-
-    .icon {
-      margin-bottom: 1.5rem;
-    }
-
-    .label {
-      font-size: 0.75rem;
-      font-weight: 500;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: #666;
-      margin-bottom: 0.25rem;
-    }
-
-    .brand {
-      font-size: clamp(3.5rem, 16vw, 5.5rem);
-      font-weight: 900;
-      color: #8B2942;
-      letter-spacing: -0.02em;
-      line-height: 1;
-      margin-bottom: 1.25rem;
-    }
-
-    .tagline {
-      font-size: 1rem;
-      font-weight: 400;
-      color: #888;
-      margin-bottom: 2rem;
-      line-height: 1.5;
-    }
-
-    .btn {
-      display: inline-block;
-      background: #8B2942;
-      color: #fff;
-      text-decoration: none;
-      font-size: 0.95rem;
-      font-weight: 600;
-      padding: 0.8rem 2rem;
-      border-radius: 6px;
-      transition: background 0.15s ease;
-      letter-spacing: 0.01em;
-    }
-
-    .btn:hover {
-      background: #a03350;
-    }
-
-    .divider {
-      width: 40px;
-      height: 1px;
-      background: #222;
-      margin: 2.5rem auto;
-    }
-
-    .coming-soon-label {
-      font-size: 0.65rem;
-      font-weight: 600;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: #444;
-      margin-bottom: 0.75rem;
-    }
-
-    .coming-soon {
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-    }
-
-    .coming-soon span {
-      font-size: 0.8rem;
-      font-weight: 500;
-      color: #3a3a3a;
-      letter-spacing: 0.05em;
-    }
-
-    .footer {
-      margin-top: 2.5rem;
-      font-size: 0.7rem;
-      color: #333;
-      letter-spacing: 0.03em;
-    }
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:Inter,sans-serif;background:#0a0a0a;color:#fff;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 24px}
+    h1{font-size:72px;font-weight:600;letter-spacing:-3px;margin-bottom:24px}
+    .tagline{font-size:18px;color:rgba(255,255,255,0.5);margin-bottom:60px}
+    .label{font-size:11px;letter-spacing:2px;color:rgba(255,255,255,0.3);margin-bottom:24px}
+    .icon{font-size:32px;margin-bottom:16px}
+    .product{font-size:16px;color:#8B2942;font-weight:500;margin-bottom:16px}
+    .cta{background:#8B2942;color:#fff;padding:14px 28px;border-radius:28px;text-decoration:none;font-weight:500}
+    .coming{margin-top:48px}
+    .coming-items{display:flex;gap:32px;color:rgba(255,255,255,0.3);font-size:14px;margin-top:16px}
+    footer{position:absolute;bottom:24px;font-size:12px;color:rgba(255,255,255,0.2)}
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="icon">
-      <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#8B2942" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M8 22h8"/>
-        <path d="M12 11v11"/>
-        <path d="M5 3h14l-1 7a6 6 0 0 1-12 0Z"/>
-      </svg>
-    </div>
-
-    <p class="label">Wine Made</p>
-    <h1 class="brand">SMPL</h1>
-    <p class="tagline">Scan any wine. Get instant answers.</p>
-
-    <a class="btn" href="https://wine.madesmpl.com">Try it free &rarr;</a>
-
-    <div class="divider"></div>
-
-    <p class="coming-soon-label">Coming soon</p>
-    <div class="coming-soon">
-      <span>Beer</span>
-      <span>Cocktails</span>
-      <span>Whiskey</span>
-    </div>
-
-    <p class="footer">&copy; 2026 Laidback Labs &middot; Ho Chi Minh City</p>
+  <h1>Made SMPL</h1>
+  <p class="tagline">Life's too short for complicated choices.</p>
+  <div class="label">NOW LIVE</div>
+  <div class="icon">🍷</div>
+  <div class="product">Wine Made SMPL</div>
+  <a href="https://wine.madesmpl.com" class="cta">Try it free</a>
+  <div class="coming">
+    <div class="label">COMING SOON</div>
+    <div class="coming-items"><span>Beer</span><span>Cocktails</span><span>Whiskey</span></div>
   </div>
+  <footer>2026 Laidback Labs - Ho Chi Minh City</footer>
 </body>
 </html>
