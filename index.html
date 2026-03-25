@@ -9,60 +9,214 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    :root { --accent: #8B2942; }
-    html, body { height: 100%; }
+    :root { --accent: #8B2942; --accent-hover: #a13350; }
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       background: #fafafa;
       color: #1d1d1f;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
       -webkit-font-smoothing: antialiased;
     }
-    main {
-      flex: 1;
+    
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(250, 250, 250, 0.8);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+    .nav-inner {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 16px 24px;
       display: flex;
-      flex-direction: column;
+      justify-content: space-between;
       align-items: center;
-      justify-content: center;
-      padding: 40px 24px;
+    }
+    .logo { font-weight: 600; font-size: 15px; }
+    .nav-links { display: flex; gap: 32px; font-size: 14px; }
+    .nav-links a { color: #1d1d1f; text-decoration: none; opacity: 0.7; transition: opacity 0.2s; }
+    .nav-links a:hover { opacity: 1; }
+    
+    /* Hero */
+    .hero {
+      padding: 140px 24px 80px;
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .hero h1 {
+      font-size: 56px;
+      font-weight: 600;
+      letter-spacing: -2px;
+      margin-bottom: 16px;
+    }
+    .hero p {
+      font-size: 21px;
+      color: #86868b;
+      line-height: 1.5;
+    }
+    
+    /* Featured Product */
+    .featured {
+      background: linear-gradient(180deg, #1d1d1f 0%, #2d1f24 100%);
+      padding: 80px 24px;
       text-align: center;
     }
-    .brand { font-size: 64px; font-weight: 600; letter-spacing: -2px; margin-bottom: 16px; color: #1d1d1f; }
-    .tagline { font-size: 18px; color: #86868b; margin-bottom: 80px; }
-    .product-section { margin-bottom: 80px; }
-    .product-label { font-size: 11px; font-weight: 500; letter-spacing: 2px; color: #86868b; margin-bottom: 20px; text-transform: uppercase; }
-    .product-name { font-size: 28px; font-weight: 600; color: var(--accent); margin-bottom: 8px; }
-    .product-desc { font-size: 15px; color: #86868b; margin-bottom: 24px; }
-    .cta { display: inline-block; background: var(--accent); color: white; padding: 14px 28px; border-radius: 980px; font-size: 15px; font-weight: 500; text-decoration: none; transition: opacity 0.2s; }
-    .cta:hover { opacity: 0.85; }
-    .coming-section { border-top: 1px solid #d2d2d7; padding-top: 40px; }
-    .coming-label { font-size: 11px; font-weight: 500; letter-spacing: 2px; color: #86868b; margin-bottom: 20px; text-transform: uppercase; }
-    .coming-items { display: flex; gap: 40px; font-size: 15px; color: #86868b; }
-    footer { padding: 20px; text-align: center; font-size: 12px; color: #86868b; }
-    @media (max-width: 480px) { .brand { font-size: 48px; } .coming-items { gap: 24px; font-size: 14px; } }
+    .featured-inner { max-width: 680px; margin: 0 auto; }
+    .badge {
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 20px;
+      letter-spacing: 0.5px;
+      margin-bottom: 24px;
+    }
+    .featured h2 {
+      font-size: 40px;
+      font-weight: 600;
+      color: white;
+      letter-spacing: -1px;
+      margin-bottom: 12px;
+    }
+    .featured p {
+      font-size: 17px;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+    .cta {
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      padding: 14px 28px;
+      border-radius: 980px;
+      font-size: 15px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .cta:hover { background: var(--accent-hover); }
+    
+    /* Coming Soon */
+    .coming {
+      padding: 80px 24px;
+      text-align: center;
+    }
+    .coming h3 {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      color: #86868b;
+      margin-bottom: 32px;
+      text-transform: uppercase;
+    }
+    .products { display: flex; justify-content: center; gap: 48px; }
+    .product { text-align: center; opacity: 0.5; }
+    .product-icon { font-size: 40px; margin-bottom: 8px; }
+    .product-name { font-size: 15px; font-weight: 500; }
+    
+    /* About */
+    .about {
+      background: #f5f5f7;
+      padding: 80px 24px;
+    }
+    .about-inner {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .about h2 {
+      font-size: 32px;
+      font-weight: 600;
+      letter-spacing: -0.5px;
+      margin-bottom: 24px;
+    }
+    .about p {
+      font-size: 17px;
+      color: #1d1d1f;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+    .about p:last-of-type { margin-bottom: 0; }
+    
+    /* Footer */
+    footer {
+      padding: 24px;
+      text-align: center;
+      font-size: 12px;
+      color: #86868b;
+      border-top: 1px solid rgba(0,0,0,0.06);
+    }
+    
+    @media (max-width: 600px) {
+      .nav-links { display: none; }
+      .hero h1 { font-size: 40px; }
+      .featured h2 { font-size: 32px; }
+      .products { gap: 32px; }
+    }
   </style>
 </head>
 <body>
-  <main>
-    <div class="brand">Made SMPL</div>
-    <p class="tagline">Life's too short for complicated choices.</p>
-    <div class="product-section">
-      <div class="product-label">Now Live</div>
-      <div class="product-name">Wine Made SMPL</div>
-      <p class="product-desc">Scan any wine. Get instant answers.</p>
-      <a href="https://wine.madesmpl.com" class="cta">Try it free</a>
-    </div>
-    <div class="coming-section">
-      <div class="coming-label">Coming Soon</div>
-      <div class="coming-items">
-        <span>Beer</span>
-        <span>Cocktails</span>
-        <span>Whiskey</span>
+  <nav>
+    <div class="nav-inner">
+      <div class="logo">Made SMPL</div>
+      <div class="nav-links">
+        <a href="https://wine.madesmpl.com">Wine</a>
+        <a href="#about">About</a>
       </div>
     </div>
-  </main>
-  <footer>© 2026 Laidback Labs · Ho Chi Minh City</footer>
+  </nav>
+
+  <section class="hero">
+    <h1>Made SMPL</h1>
+    <p>Life's too short for complicated choices. We make the good stuff easy to find.</p>
+  </section>
+
+  <section class="featured">
+    <div class="featured-inner">
+      <span class="badge">NOW LIVE</span>
+      <h2>Wine Made SMPL</h2>
+      <p>Scan any wine bottle. Get instant answers. No sommelier required. Know if it's worth it before you buy.</p>
+      <a href="https://wine.madesmpl.com" class="cta">Try it free</a>
+    </div>
+  </section>
+
+  <section class="coming">
+    <h3>Coming Soon</h3>
+    <div class="products">
+      <div class="product">
+        <div class="product-icon">🍺</div>
+        <div class="product-name">Beer</div>
+      </div>
+      <div class="product">
+        <div class="product-icon">🍸</div>
+        <div class="product-name">Cocktails</div>
+      </div>
+      <div class="product">
+        <div class="product-icon">🥃</div>
+        <div class="product-name">Whiskey</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="about-inner">
+      <h2>Why we built this</h2>
+      <p>We've all been there. Standing in a wine shop, staring at hundreds of bottles, pretending to know what we're looking at. Or at a restaurant, nodding along as the sommelier describes notes of "wet stone and forest floor."</p>
+      <p>Made SMPL cuts through the noise. Scan any bottle, get a straight answer: is it worth it? Does it match your taste? Will it impress your guests?</p>
+      <p>No jargon. No pretense. Just simple answers to help you choose with confidence.</p>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Laidback Labs · Ho Chi Minh City, Vietnam
+  </footer>
 </body>
 </html>
